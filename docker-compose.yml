@@ -2,24 +2,22 @@ version: '2'
 
 services:
   angularapp: 
-    container_name: angularapp
-    build: wep_app
+    build: web_app/ceiba-eafit
     ports:
-      -"4200:4200"
+    - "4200:4200"
     depends_on:
-      -express
+    - express
 
   express:
-    container_name: express
-    build: wep_app/ceiba-eafit
+    build: server
     ports:
-      -"3000:3000"
+    - "3000:3000"
     depends_on:
-      -database
+    - database
 
-   database:
-    container_name: database
+  database:
     image: mongo
+    volumes:
     - ./data:/data/db
     ports:
-    -"27017:27017"
+    - "27017:27017"
