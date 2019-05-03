@@ -1,0 +1,10 @@
+FROM node:latest as node
+WORKDIR /app
+COPY . .
+
+RUN npm install
+RUN npm build --prod
+
+FROM nginx:alpine
+COPY --from=node /app/dist/ceiba-eafit /usr/share/nginx/html
+EXPOSE 80

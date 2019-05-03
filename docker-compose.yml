@@ -4,11 +4,12 @@ services:
   angularapp: 
     build: web_app/ceiba-eafit
     ports:
-    - "4200:4200"
+    - "80:80"
     depends_on:
     - express
 
   express:
+    container_name: express 
     build: server
     ports:
     - "3000:3000"
@@ -16,6 +17,7 @@ services:
     - database
 
   database:
+    container_name: database 
     image: mongo
     volumes:
     - ./data:/data/db
