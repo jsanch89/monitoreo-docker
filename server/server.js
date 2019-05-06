@@ -1,4 +1,8 @@
 //Set up
+var delayInMilliseconds = 1000; //1 second
+
+setTimeout(function() {
+    //your code to be executed after 1 second
 var logger = require('morgan'),
     cors = require('cors'),
     http = require('http'),
@@ -38,6 +42,7 @@ app.use(require('./app/routes/ceiba_data_routes'));
 app.use(require('./app/routes/pv_device_routes'));
 app.use(require('./app/routes/ceiba_aux_variables_routes'));
 
-http.createServer(app).listen(port, function (err) {
+    http.createServer(app).listen(port,"0.0.0.0", function (err) {
      console.log('listeing in http://localhost:' + port);
  });
+}, delayInMilliseconds);

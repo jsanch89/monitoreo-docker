@@ -7,4 +7,4 @@ RUN npm install -s nodemon
 RUN npm install
 COPY . /usr/src/app
 Expose 3000
-CMD ["nodemon","server.js"]
+CMD ["node","server.js"]

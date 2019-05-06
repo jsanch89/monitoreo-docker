@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 
 const CONFIG ={
-apiUrl:'http://52.206.230.227:3000' // aqui se cambia por la url de heroku
+apiUrl:'http://54.89.235.149:3000/' 
 };
 
 @Injectable()
